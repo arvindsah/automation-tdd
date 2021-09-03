@@ -1,5 +1,10 @@
 package base;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -30,4 +35,22 @@ public class BasePage {
 		tl.set(driver);
 		
 		}
+	static Properties prop;
+	public void initProperties() {
+		String configFile= ".\\src\\main\\java\\config\\config.qa.properties";
+		prop=  new Properties();
+		try {
+			prop.load(new FileInputStream(new File(configFile)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public static String getProperty(String key) {
+		return prop.getProperty(key);
+		
+	}
+			
+			
+	
 }

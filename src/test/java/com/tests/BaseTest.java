@@ -12,8 +12,9 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public void setUp(){
-		base.initDriver();
 		base.initProperties();
+		base.initDriver();
+		
 	}
 
 	@AfterMethod

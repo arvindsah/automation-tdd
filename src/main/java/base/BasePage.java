@@ -57,9 +57,34 @@ public class BasePage {
 		
 		}
 	static Properties prop;
+	String env=null;
 	public void initProperties() {
-		String configFile= ".\\src\\main\\java\\config\\config.qa.properties";
+		String configFile= "."+File.separator+"src"+File.separator+"main"+File.separator+
+				"java"+File.separator+"config"+File.separator;
 		prop=  new Properties();
+		
+		if(System.getProperty("env")!=null) {
+			env=System.getProperty("env");
+		}else {
+			System.out.println("setting default env as qa, as no value provided for env");
+			env="qa";
+		}
+		
+		switch(env) {
+		case "qa":
+			configFile=configFile.concat("config.qa.properties");
+			break;
+		case "uat":
+			configFile=configFile.concat("config.uat.properties");
+			break;
+		case "sit":
+			configFile=configFile.concat("config.sit.properties");
+			break;
+		default:
+			configFile=configFile.concat("config.qa.properties");
+			break;
+		}
+		
 		try {
 			prop.load(new FileInputStream(new File(configFile)));
 		} catch (IOException e) {

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.amway.base.OptionsManager;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
@@ -18,12 +20,13 @@ public class BasePage {
 	
 	
 	ThreadLocal<WebDriver> tl= new ThreadLocal<WebDriver>();
+	base.OptionsManager optionsManager;
 	
 	public synchronized WebDriver getDriver() {
 		return tl.get();
 	}
 			
-			
+	
 	
 	public void initDriver() {
 		
@@ -35,14 +38,16 @@ public class BasePage {
 		}else {
 			browser=prop.getProperty("browser");
 		}
+		
+		 optionsManager = new OptionsManager(prop);
 		switch(browser){
 			case "chrome" :
 				WebDriverManager.chromedriver().setup();		
-				driver = new ChromeDriver();
+				driver = new ChromeDriver(optionsManager.getChromeOptions());
 				break;
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();		
-				driver = new FirefoxDriver();
+				driver = new FirefoxDriver(optionsManager.getChromeOptions());
 				break;
 			default:
 				WebDriverManager.chromedriver().setup();		

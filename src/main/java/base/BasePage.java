@@ -8,9 +8,6 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import com.amway.base.OptionsManager;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
@@ -28,6 +25,7 @@ public class BasePage {
 			
 	
 	
+	@SuppressWarnings("deprecation")
 	public void initDriver() {
 		
 		
@@ -45,7 +43,7 @@ public class BasePage {
 				WebDriverManager.chromedriver().setup();		
 				driver = new ChromeDriver(optionsManager.getChromeOptions());
 				break;
-			case "firefox":
+			case "firefox" :
 				WebDriverManager.firefoxdriver().setup();		
 				driver = new FirefoxDriver(optionsManager.getChromeOptions());
 				break;
@@ -57,7 +55,7 @@ public class BasePage {
 		 
 		
 		driver.manage().window().maximize();
-		
+		driver.get(prop.getProperty("url"));
 		tl.set(driver);
 		
 		}

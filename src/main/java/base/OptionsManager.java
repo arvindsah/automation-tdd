@@ -1,5 +1,6 @@
 package base;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Properties;
@@ -26,7 +27,7 @@ public class OptionsManager {
 			co = new ChromeOptions();
 			
 			//String downloadFilepath = System.getProperty("user.dir")+File.separator+"download"+File.separator;
-			String downloadFilepath = System.getProperty("user.dir")+"\\downloads";
+			String downloadFilepath = System.getProperty("user.dir")+File.separator+"downloads";
 			
 			//set the download path and disable save as modal window
 			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
@@ -42,9 +43,9 @@ public class OptionsManager {
 			co.setExperimentalOption("useAutomationExtension", false);
 			co.addArguments("--start-maximized");
 			
-			if(prop.getProperty("incognito").equals("true")) {co.addArguments("--incognito");}
-			if(prop.getProperty("headless").equals("true")) {co.addArguments("--headless");}
-			
+//			if(prop.getProperty("incognito").equals("true")) {co.addArguments("--incognito");}
+//			if(prop.getProperty("headless").equals("true")) {co.addArguments("--headless");}
+//			
 			
 						
 			return co;
@@ -54,8 +55,8 @@ public class OptionsManager {
 		
 		// Creating FirefoxOptions to set profile
 		 fo = new FirefoxOptions();
-		 if(prop.getProperty("incognito").equals("true")) fo.addArguments("--incognito");
-     	 if(prop.getProperty("headless").equals("true")) fo.addArguments("--headless");
+//		 if(prop.getProperty("incognito").equals("true")) fo.addArguments("--incognito");
+//     	 if(prop.getProperty("headless").equals("true")) fo.addArguments("--headless");
      	 
      	String downloadFilepath = System.getProperty("user.dir")+"\\downloads";
      	fo.addPreference("browser.download.dir", downloadFilepath);

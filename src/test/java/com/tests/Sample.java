@@ -8,7 +8,6 @@ public class Sample extends BaseTest{
 
 	@Test
 	public void loginTest() throws InterruptedException {
-		this.getDriver().get(BasePage.getProperty("url"));
 		Thread.sleep(5000l);
 	}
 	

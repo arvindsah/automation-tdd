@@ -19,11 +19,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class AppTest 
 {
     /**
-     * Rigorous Test :-)
-     * @throws InterruptedException 
+     * 
+     * @throws  
      */
     @Test
-    public void shouldAnswerWithTrue() throws InterruptedException
+    public void shouldAnswerWithTrue() 
     {
     	WebDriverManager.edgedriver().setup();
     	WebDriver driver= new ChromeDriver();

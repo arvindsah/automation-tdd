@@ -27,7 +27,7 @@ public class Testing101 {
 				temp = temp % 10;
 			} while ((temp % 10 > 0));
 
-			// every iternation reduce lenth of the temp 97, 77,
+			// every iteration reduce lenth of the temp 97, 77,
 		}
 
 		System.out.println("counter value " + counter);

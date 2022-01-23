@@ -1,0 +1,4 @@
+1.drop down cascading
+2. json file reading using Object mapper
+3. reading properties file using classLoader.getReourceAsStream
+

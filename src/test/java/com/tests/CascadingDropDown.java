@@ -43,7 +43,7 @@ public class CascadingDropDown {
 		 driver= new ChromeDriver();
 		
 		driver.manage().window().maximize();
-		driver.get("D:\\eclipse-workspace\\web-tdd\\Resources\\jsonFile\\UI.html");
+		driver.get("D:\\eclipse-workspace\\web-tdd\\resources\\jsonFile\\UI.html");
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
@@ -56,7 +56,7 @@ public class CascadingDropDown {
 
 		System.out.println("From UI " + actualObject);
 		
-		String fileLocation=System.getProperty("user.dir")+"\\Resources\\jsonFile\\cascadingJson.json";
+		String fileLocation=System.getProperty("user.dir")+"\\resources\\jsonFile\\cascadingJson.json";
 		File file= new File(fileLocation);
 		ObjectMapper objMap= new ObjectMapper();
 		

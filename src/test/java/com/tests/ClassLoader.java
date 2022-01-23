@@ -20,7 +20,7 @@ public class ClassLoader {
 		
 		//another way to load the content of the diffrent files
 		//https://stackoverflow.com/questions/2914375/getting-file-path-in-java/21906160
-		System.out.println("location" + getClass().getClassLoader().getResource(" ").getPath());
+		System.out.println("location - " + getClass().getClassLoader().getResource(" ").getPath());
 		InputStream inputStream=(this.getClass().getClassLoader().getResourceAsStream("jsonFile" + File.separator
 				+"propertyFileExample.properties"));
 		Properties prop = new Properties();

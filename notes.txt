@@ -1,4 +1,8 @@
 1.drop down cascading
 2. json file reading using Object mapper
 3. reading properties file using classLoader.getReourceAsStream
-
+4. Transitive dependency - A depends on B and B depends on C- https://howtodoinjava.com/maven/maven-dependency-management/#:~:text=
+	Transitive%20dependency%20means%20that%20if,version%20mismatch%20issues%20in%20runtime.
+	mvn dependency:tree sometimes diffrent version of same aftifcats are added as part 
+	of different transitive dependency
+5. 

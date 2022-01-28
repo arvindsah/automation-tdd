@@ -12,6 +12,7 @@ import com.x.qa.util.AssertionUtil;
 import com.x.qa.util.ExcelDataUtil;
 import com.x.qa.util.ExtentReportUtil;
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 
 public class Driver {
@@ -19,6 +20,7 @@ public class Driver {
 	private static final Logger log= LoggerFactory.getLogger(Driver.class);
 	public static Map<String, List<Map<String, String>>> excelData;
 	public static ExtentReports extentReport; 
+	public static ExtentTest child; 
 	public static AssertionUtil reportLog;
 	/**
 	 * 1. read a data for run

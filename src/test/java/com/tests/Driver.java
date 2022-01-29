@@ -30,7 +30,7 @@ public class Driver {
 	 * 
 	 * 2. DB connection
 	 * 3. Assertion Util
-	 * 4. Extent Report Utl
+	 * 4. Extent Report Utl - https://www.swtestacademy.com/extent-reports-version-3-reporting-testng
 	 * 
 	 */
 	
@@ -42,7 +42,8 @@ public class Driver {
 		excelDataFile.readInputFile();
 		excelData=excelDataFile.getExcelData();
 		
-		extentReport=ExtentReportUtil.createInstance(suiteName);
+		extentReport=ExtentReportUtil.createInstance();
+		//suiteName you can supply the report file name
 		reportLog= new AssertionUtil();
 		
 		

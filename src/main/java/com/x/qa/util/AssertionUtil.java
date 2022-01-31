@@ -1,7 +1,5 @@
 package com.x.qa.util;
 
-import org.apache.poi.ss.usermodel.BorderExtent;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 

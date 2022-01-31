@@ -1,5 +1,6 @@
 package com.tests;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -31,12 +32,13 @@ public class Driver {
 	 * 2. DB connection
 	 * 3. Assertion Util
 	 * 4. Extent Report Utl - https://www.swtestacademy.com/extent-reports-version-3-reporting-testng
+	 * @throws IOException 
 	 * 
 	 */
 	
 	@BeforeSuite
 	@Parameters({"environment", "suite", "inputFile"})
-	public void BeforeSuiteSetup(String env, String suiteName, String inputFile) {
+	public void BeforeSuiteSetup(String env, String suiteName, String inputFile) throws IOException {
 		ExcelDataUtil excelDataFile= new ExcelDataUtil();
 		excelDataFile.setInputFile(inputFile);
 		excelDataFile.readInputFile();

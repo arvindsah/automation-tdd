@@ -81,6 +81,7 @@ public class ExcelDataUtil {
 				}
 			}
 			excelData.put(sheetName, sheetData);
+			log.info("Input data sheet {}, Data {}", sheetName, sheetData);
 		} 
 		wb.close();
 		setExcelData(excelData);

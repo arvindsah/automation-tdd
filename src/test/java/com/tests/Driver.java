@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
@@ -48,8 +49,11 @@ public class Driver {
 		//suiteName you can supply the report file name
 		reportLog= new AssertionUtil();
 		
-		
-		
+	}
+	
+	@AfterSuite
+	public void afterSuite() {
+		// close connection like db ...
 	}
 
 }

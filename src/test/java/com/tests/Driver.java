@@ -40,6 +40,7 @@ public class Driver {
 	@BeforeSuite
 	@Parameters({"environment", "suite", "inputFile"})
 	public void BeforeSuiteSetup(String env, String suiteName, String inputFile) throws IOException {
+		System.out.println("before method");
 		ExcelDataUtil excelDataFile= new ExcelDataUtil();
 		excelDataFile.setInputFile(inputFile);
 		excelDataFile.readInputFile();

@@ -1,19 +1,20 @@
 package com.x.qa.util;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.poi.hssf.eventusermodel.dummyrecord.LastCellOfRowDummyRecord;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,10 @@ public class ExcelDataUtil {
 	Map<String, List<Map<String, String>>> excelData;
 	
 	public void setInputFile(String inputFile) {
-		this.inputFile=inputFile;
+		
+		this.inputFile=System.getProperty("user.dir")+"\\src\\test\\java\\testData\\"+inputFile+".xlsx";
+		
+		log.info("file name {}", this.inputFile);
 		
 	}
 
@@ -39,8 +43,10 @@ public class ExcelDataUtil {
 	}
 
 	public void readInputFile() throws IOException {
-		InputStream is= this.getClass().getResourceAsStream(inputFile);
-		
+		//InputStream is= this.getClass().getClassLoader().getResourceAsStream(inputFile);
+
+		FileInputStream is= new FileInputStream( new File(inputFile));
+
 		XSSFWorkbook wb = new XSSFWorkbook(is);
 		int numberOfSheets=wb.getNumberOfSheets();
 		DataFormatter format= new DataFormatter();

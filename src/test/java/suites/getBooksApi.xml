@@ -10,7 +10,7 @@
   <parameter name="suite" value="getBookApi Testing"/>
   <parameter name="inputFile" value="getBook"/>
   <test name="Test">
-  
+   
 
     <classes>
       <class name="com.tests.GetBooksApi"/>

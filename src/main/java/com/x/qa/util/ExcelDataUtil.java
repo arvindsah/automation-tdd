@@ -50,7 +50,7 @@ public class ExcelDataUtil {
 		XSSFWorkbook wb = new XSSFWorkbook(is);
 		int numberOfSheets=wb.getNumberOfSheets();
 		DataFormatter format= new DataFormatter();
-		Map<String, List<Map<String,String>>> excelData = null;
+		Map<String, List<Map<String,String>>> excelData = new HashMap<String, List<Map<String,String>>>();
 		
 		for(int i=0; i<numberOfSheets; i++) {
 			Sheet sheet= wb.getSheetAt(i);

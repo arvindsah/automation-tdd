@@ -3,6 +3,10 @@
 3. reading properties file using classLoader.getReourceAsStream
 4. Transitive dependency - A depends on B and B depends on C- https://howtodoinjava.com/maven/maven-dependency-management/#:~:text=
 	Transitive%20dependency%20means%20that%20if,version%20mismatch%20issues%20in%20runtime.
-	mvn dependency:tree sometimes diffrent version of same aftifcats are added as part 
+	mvn dependency:tree sometimes diffrent version of same artifacts are added as part 
 	of different transitive dependency
-5. 
+5. log file issue while reading excel - many of the jar uses logs - sometimes becz of multiple jars using diffrent version 
+log or any other sub dependency might create problem'. TO resolve this see what are sub dependencies are being as part
+of other jar and try to match same version for diffrent jars. Ex- logback-classic and log4j-to-slf4j 
+
+6. 

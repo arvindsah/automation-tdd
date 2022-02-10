@@ -1,4 +1,4 @@
-package com.tests;
+package com.x.qa.tests;
 
 import java.io.IOException;
 import java.util.List;

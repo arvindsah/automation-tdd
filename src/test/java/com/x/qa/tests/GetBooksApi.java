@@ -1,4 +1,4 @@
-package com.tests;
+package com.x.qa.tests;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,32 +16,32 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 
-public class GetBooksApi extends Driver {
+public class GetBooksApi  {
 	
 	
-	@DataProvider(name="getBooks")
-	public Iterator<Object[]> getBookPositiveScn(){
-		
-		String sheetName="getBookSheet";
-		
-		List<Map<String, String>> getBookSheetData=excelData.get(sheetName);
-		
-		Collection<Object[]> rowData= new ArrayList<Object[]>();
-		
-		
-		for( Map<String, String> row:getBookSheetData) {
-			rowData.add( new Object[] {row});
-			
-		}
-		return rowData.iterator();
-	}
+	/*
+	 * @DataProvider(name="getBooks") public Iterator<Object[]>
+	 * getBookPositiveScn(){
+	 * 
+	 * String sheetName="getBookSheet";
+	 * 
+	 * List<Map<String, String>> getBookSheetData=excelData.get(sheetName);
+	 * 
+	 * Collection<Object[]> rowData= new ArrayList<Object[]>();
+	 * 
+	 * 
+	 * for( Map<String, String> row:getBookSheetData) { rowData.add( new Object[]
+	 * {row});
+	 * 
+	 * } return rowData.iterator(); }
+	 */
 	
 	
 	
 	@Test()
 			//dataProvider = "getBooks")
 	public void getBooks() {
-		
+		//https://www.toolsqa.com/rest-assured/rest-api-end-to-end-test/
 		
 		String userID = "9b5f49ab-eea9-45f4-9d66-bcf56a531b85";
         String userName = "TOOLSQA-Test";

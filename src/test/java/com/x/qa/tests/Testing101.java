@@ -1,4 +1,4 @@
-package com.tests;
+package com.x.qa.tests;
 
 public class Testing101 {
 
